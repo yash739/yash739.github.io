@@ -189,3 +189,56 @@ footer { background: #0b1426; border-top: 0; color: #9fb0c9; }
   .hero-grid { grid-template-columns: 1fr; gap: 2.25rem; }
   .portrait { max-width: 15rem; order: -1; }
 }
+
+/* ---- load-in motion ---- */
+@keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes drop { from { opacity: 0; transform: translateY(-100%); } to { opacity: 1; transform: none; } }
+@keyframes pop { from { opacity: 0; transform: translateY(18px) scale(0.94); } to { opacity: 1; transform: none; } }
+@keyframes grow { from { width: 0; } to { width: 2.75rem; } }
+@keyframes twinkle { from { opacity: 0.12; } to { opacity: 0.95; } }
+
+.nav { animation: drop 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+.hero-copy > * { animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+.hero-copy > :nth-child(1) { animation-delay: 0.10s; }
+.hero-copy > :nth-child(2) { animation-delay: 0.22s; }
+.hero-copy > :nth-child(3) { animation-delay: 0.36s; }
+.hero-copy > :nth-child(4) { animation-delay: 0.50s; }
+.hero-copy > :nth-child(5) { animation-delay: 0.64s; }
+.portrait { animation: pop 1s 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+
+/* a second, gently twinkling layer of stars behind the hero */
+.hero-bg { position: relative; }
+.hero-bg::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(1.5px 1.5px at 18% 34%, #fff 50%, transparent 52%),
+    radial-gradient(1px 1px at 36% 12%, #ffe9cf 50%, transparent 52%),
+    radial-gradient(1.5px 1.5px at 55% 74%, #fff 50%, transparent 52%),
+    radial-gradient(1px 1px at 72% 44%, #fff 50%, transparent 52%),
+    radial-gradient(1.5px 1.5px at 84% 12%, #ffe9cf 50%, transparent 52%),
+    radial-gradient(1px 1px at 94% 58%, #fff 50%, transparent 52%),
+    radial-gradient(1px 1px at 5% 60%, #fff 50%, transparent 52%);
+  animation: twinkle 3.6s ease-in-out infinite alternate;
+}
+.hero { position: relative; z-index: 1; }
+
+/* scroll reveal: .js is set by a tiny inline script, .in by assets/reveal.js */
+.js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *, .contact-list li, #work-log .wrap > p):not(.in) { opacity: 0; }
+.js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *, .contact-list li, #work-log .wrap > p).in {
+  animation: rise 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; animation-delay: var(--d, 0s);
+}
+section > .wrap > h2::after { content: ""; display: block; width: 2.75rem; height: 3px; margin-top: 0.55rem; border-radius: 2px; background: var(--accent); }
+.js section > .wrap > h2.in::after { animation: grow 0.8s 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+
+/* work-log cards are inserted by script: ease them in */
+#latest-work .card, #all-work .card { animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+#latest-work .card:nth-child(2), #all-work .card:nth-child(2) { animation-delay: 0.07s; }
+#latest-work .card:nth-child(3), #all-work .card:nth-child(3) { animation-delay: 0.14s; }
+#all-work .card:nth-child(4) { animation-delay: 0.21s; }
+#all-work .card:nth-child(5) { animation-delay: 0.28s; }
+#project, .page-head { animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *, .contact-list li, #work-log .wrap > p):not(.in) { opacity: 1; }
+}
