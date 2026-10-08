@@ -80,4 +80,5 @@ both in `index.html` and for `links:` entries in markdown pages.
 - `work/*.md`: one entry per thread; `work/_TEMPLATE.md` is skipped by the indexer
 - `scripts/build_index.py`: generates `work/index.json`
 - `.github/workflows/pages.yml`: builds and deploys on every push to `main`
+- `assets/img/` + `assets/swap.js`: the two hero photos (crossfade; captions live in `data-caption` attributes in `index.html`)
 - `assets/vendor/marked.min.js`: vendored Markdown renderer (MIT)
