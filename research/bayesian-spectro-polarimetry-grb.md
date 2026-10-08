@@ -1,6 +1,6 @@
 ---
 title: Bayesian Spectro-Polarimetry of Gamma-Ray Bursts
-period: Aug 2024 - present
+period: Jan 2025 - present
 guide: Prof. Varun Bhalerao, IIT Bombay (MSc thesis)
 summary: Led the spectro-polarimetric analysis of GRB260226A with AstroSat-CZTI, building joint GBM-LAT-CZTI fits in 3ML and comparing them to predictions of Two-Zone Inverse Compton Emission. Also modelled the multi-band afterglow of GRB 230812B with MCMC and reported joint-polarization measurements of GRBs 161218B and 170202B co-detected by CZTI and POLAR.
 tags: [GRBs, 3ML, Inverse Compton, MCMC]

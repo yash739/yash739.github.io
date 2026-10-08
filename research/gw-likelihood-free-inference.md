@@ -1,6 +1,6 @@
 ---
 title: Likelihood-Free Parameter Estimation of Gravitational Waves
-period: May 2025 - present
+period: May 2025 - Dec 2025
 guide: Prof. Michael Coughlin, University of Minnesota
 summary: Using AMPLFI for likelihood-free inference on neutron star merger gravitational waves, modifying IMRPhenom binary-black-hole models to account for the neutron star equation of state and optimising training hyper-parameters for robust real-world performance.
 tags: [Gravitational waves, Machine learning]

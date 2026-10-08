@@ -29,6 +29,8 @@ jobs:
           mkdir _site
           cp -r index.html work.html project.html assets work research _site/
           rm -f _site/work/_TEMPLATE.md _site/research/_TEMPLATE.md
+      - name: Version asset URLs (cache busting)
+        run: sed -i -E "s#(assets/[A-Za-z0-9_./-]+\.(css|js))#\1?v=${GITHUB_SHA::7}#g" _site/*.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

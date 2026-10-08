@@ -133,21 +133,3 @@ footer { padding: 2rem 0 3rem; border-top: 1px solid var(--line); color: var(--m
 }
 .pill:hover { border-color: var(--accent); color: var(--accent); }
 
-/* viewer pop-up */
-dialog.viewer {
-  width: min(62rem, 96vw); height: min(88vh, 52rem); max-width: none; max-height: none; padding: 0;
-  border: 1px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--ink);
-  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.28);
-}
-dialog.viewer[open] { display: flex; flex-direction: column; }
-dialog.viewer::backdrop { background: rgba(15, 23, 42, 0.45); backdrop-filter: blur(2px); }
-.viewer-bar { display: flex; align-items: center; gap: 0.75rem; padding: 0.55rem 0.75rem 0.55rem 1rem; border-bottom: 1px solid var(--line); }
-.viewer-title { flex: 1; min-width: 0; font: 600 0.95rem var(--sans); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.viewer-open { font-size: 0.85rem; white-space: nowrap; }
-.viewer-close { border: 0; background: none; font-size: 1.7rem; line-height: 1; color: var(--muted); cursor: pointer; padding: 0 0.35rem; }
-.viewer-close:hover { color: var(--accent); }
-.viewer-frame { flex: 1; width: 100%; border: 0; background: var(--code-bg); }
-.viewer-note { margin: 0; padding: 0.35rem 1rem; font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--line); }
-@media (max-width: 40rem) {
-  dialog.viewer { width: 100vw; height: 100dvh; border-radius: 0; }
-}

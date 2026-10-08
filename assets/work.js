@@ -51,9 +51,7 @@
     }
     if (entry.links && entry.links.length) {
       container.appendChild(el("div", { class: "links" }, entry.links.map(function (l) {
-        var a = el("a", { class: "btn", href: l.url, text: l.label });
-        if (window.Viewer && Viewer.canEmbed(l.url)) { a.setAttribute("data-embed", ""); a.setAttribute("data-title", l.label); }
-        return a;
+        return el("a", { class: "btn", href: l.url, target: "_blank", rel: "noopener", text: l.label });
       })));
     }
     var body = el("div", { class: "prose" });
