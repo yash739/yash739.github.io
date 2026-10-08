@@ -133,3 +133,11 @@ footer { padding: 2rem 0 3rem; border-top: 1px solid var(--line); color: var(--m
 }
 .pill:hover { border-color: var(--accent); color: var(--accent); }
 
+
+/* CV section */
+.cv { display: grid; grid-template-columns: minmax(0, 15rem) 1fr; gap: 2rem; align-items: start; }
+.cv-thumb { display: block; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; box-shadow: 0 6px 24px rgba(15, 23, 42, 0.08); transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s; }
+.cv-thumb:hover { border-color: var(--accent); box-shadow: 0 10px 30px rgba(180, 84, 10, 0.16); transform: translateY(-2px); }
+.cv-thumb img { display: block; width: 100%; height: auto; }
+.cv-text p { margin: 0 0 0.75rem; max-width: 30rem; }
+@media (max-width: 40rem) { .cv { grid-template-columns: 1fr; } .cv-thumb { max-width: 15rem; } }
