@@ -3,3 +3,5 @@ research/index.json
 _site/
 __pycache__/
 .claude/
+preview-*.html
+themes/
