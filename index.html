@@ -24,7 +24,7 @@
 </header>
 
 <main id="top">
-<div class="wrap hero">
+<div class="hero-bg"><div class="wrap hero">
   <p class="eyebrow">Physics &middot; Astrophysics &middot; IIT Bombay</p>
   <h1>Yashowardhan Rai</h1>
   <p class="lede">I study <strong>high-energy astrophysics</strong> and <strong>multi-messenger science</strong>: how gamma-ray bursts radiate, what neutron star mergers tell us about dense matter, and how matter falls onto compact objects.</p>
@@ -37,7 +37,7 @@
     <a class="btn" href="work.html">Work log</a>
     <a class="btn" href="https://github.com/yash739">GitHub</a>
   </div>
-</div>
+</div></div>
 
 <section id="about">
   <div class="wrap">
@@ -45,8 +45,8 @@
     <p>I am doing a B.Tech. in Engineering Physics (2022&ndash;26) followed by an MSc in Physics with a specialisation in Astrophysics (2026&ndash;27) at the Indian Institute of Technology Bombay. I have been a student member of the LIGO India Science Collaboration since 2025.</p>
     <p>My work sits between observation and modelling: fitting real GRB data with Bayesian frameworks, simulating radiative transfer and accretion flows, and training machine-learning models for physics applications.</p>
     <div class="cols-interests">
-      <p class="meta"><b>High energy astrophysics.</b> Compact objects, neutron star equation of state, simulations of accretion disks and jets.</p>
-      <p class="meta"><b>Multi-messenger science.</b> Gravitational waves; modelling of radio, X-ray and nuclear transients.</p>
+      <p class="meta"><b>Time domain astronomy.</b> Follow-up and modelling of transients, multi-messenger science, compact objects.</p>
+      <p class="meta"><b>Astronomical software.</b> Bayesian methods, simulations, instrumentation modelling, open-source development.</p>
     </div>
   </div>
 </section>
@@ -56,61 +56,62 @@
     <h2>Research</h2>
     <div class="cards">
 
-      <article class="card">
-        <div><h3>GRB spectro-polarimetry</h3>
-        <p class="meta">Prof. Varun Bhalerao &middot; IIT Bombay &middot; Dec 2023 &ndash; present</p></div>
-        <p>Time- and energy-resolved joint spectral and polarimetric fits of GRBs in 3ML. Contributed to the redevelopment of polarpy into <b>PolPy</b> (now part of 3ML) and built an injection-recovery pipeline for the upcoming Daksha polarimeter.</p>
-        <div class="tags"><span class="tag">GRBs</span><span class="tag">AstroSat-CZTI</span><span class="tag">3ML</span></div>
-      </article>
+      <a class="card" href="project.html#polpy-czti-daksha">
+        <div><h3>Hard X-ray Polarimetry Software: PolPy, CZTI and Daksha</h3>
+        <p class="meta">Prof. Varun Bhalerao &middot; IIT Bombay &middot; Dec 2023 &ndash; Jan 2025</p></div>
+        <p>Co-developed PolPy, a plugin for the Multi-Mission Maximum Likelihood Framework that enables joint-polarization measurements with current and future polarimeters. Built the injection-recovery pipeline for the Daksha polarimeter, and converted the AstroSat-CZTI polarization pipeline from legacy IDL to Python with pixel charge-sharing effects, enabling CZTI's 11-year catalogue of 40+ GRBs.</p>
+        <div class="tags"><span class="tag">Polarimetry</span><span class="tag">PolPy</span><span class="tag">AstroSat-CZTI</span><span class="tag">Daksha</span></div>
+      </a>
 
-      <article class="card">
-        <div><h3>Non-equilibrium ammonia modelling</h3>
-        <p class="meta">Dr. Thushara Pillai &middot; MIT Haystack &middot; May 2025 &ndash; present</p></div>
-        <p>Using the 3-D non-LTE radiative transfer code Magritte to synthetically image ammonia hyperfine inversion lines in cold proto-stellar clouds and investigate the hyperfine intensity anomaly. <a href="https://github.com/yash739/ammonia-HIA">Code on GitHub</a>.</p>
-        <div class="tags"><span class="tag">Radiative transfer</span><span class="tag">ISM</span></div>
-      </article>
+      <a class="card" href="project.html#bayesian-spectro-polarimetry-grb">
+        <div><h3>Bayesian Spectro-Polarimetry of Gamma-Ray Bursts</h3>
+        <p class="meta">Prof. Varun Bhalerao &middot; IIT Bombay &middot; Aug 2024 &ndash; present &middot; MSc thesis</p></div>
+        <p>Led the spectro-polarimetric analysis of GRB260226A with AstroSat-CZTI, building joint GBM-LAT-CZTI fits in 3ML and comparing them to predictions of Two-Zone Inverse Compton Emission. Also modelled the multi-band afterglow of GRB 230812B with MCMC and reported joint-polarization measurements of GRBs 161218B and 170202B co-detected by CZTI and POLAR.</p>
+        <div class="tags"><span class="tag">GRBs</span><span class="tag">3ML</span><span class="tag">Inverse Compton</span><span class="tag">MCMC</span></div>
+      </a>
 
-      <article class="card">
-        <div><h3>Likelihood-free gravitational-wave inference</h3>
+      <a class="card" href="project.html#ammonia-non-lte">
+        <div><h3>Non-LTE Modelling of the Ammonia Hyperfine Intensity Anomaly</h3>
+        <p class="meta">Dr. Thushara Pillai (MIT Haystack) &amp; Dr. Brian Svoboda (NRAO) &middot; May 2025 &ndash; present</p></div>
+        <p>Used the 3-D radiative transfer code Magritte to show that selective photon trapping produces the ammonia hyperfine intensity anomaly under non-LTE conditions, using the latest NH&#8323;&ndash;H&#8322; collisional rates. Built a &chi;&sup2;-based retrieval of cloud density, NH&#8323; abundance and Jeans radius, and scaled it to ~2000 real sources from the Green Bank Ammonia Survey and Parkes.</p>
+        <div class="tags"><span class="tag">Radiative transfer</span><span class="tag">ISM</span><span class="tag">Magritte</span></div>
+      </a>
+
+      <a class="card" href="project.html#gw-likelihood-free-inference">
+        <div><h3>Likelihood-Free Parameter Estimation of Gravitational Waves</h3>
         <p class="meta">Prof. Michael Coughlin &middot; University of Minnesota &middot; May 2025 &ndash; present</p></div>
-        <p>Using AMPLFI for likelihood-free parameter estimation of neutron star mergers, extending IMRPhenom binary-black-hole models to account for the neutron star equation of state.</p>
+        <p>Using AMPLFI for likelihood-free inference on neutron star merger gravitational waves, modifying IMRPhenom binary-black-hole models to account for the neutron star equation of state and optimising training hyper-parameters for robust real-world performance.</p>
         <div class="tags"><span class="tag">Gravitational waves</span><span class="tag">Machine learning</span></div>
-      </article>
+      </a>
 
-      <article class="card">
-        <div><h3>GRMHD of compact object accretion</h3>
-        <p class="meta">Prof. Rahul Kashyap &middot; IIT Bombay &middot; Aug 2025 &ndash; present</p></div>
-        <p>Simulating accretion disks with AthenaK across length scales; studying 3-D magneto-rotational instability and angular momentum transport, and connecting disk and jet structure to X-ray binary observations.</p>
-        <div class="tags"><span class="tag">GRMHD</span><span class="tag">Accretion</span></div>
-      </article>
+      <a class="card" href="project.html#grmhd-accretion">
+        <div><h3>GRMHD Modelling of Compact Object Accretion</h3>
+        <p class="meta">Prof. Rahul Kashyap &middot; IIT Bombay &middot; Aug &ndash; Dec 2025 &middot; Senior thesis</p></div>
+        <p>Using AthenaK to simulate compact object accretion disks across length scales, studying 3-D magneto-rotational instability and angular momentum transport, and connecting simulations to observed disk and jet structure and X-ray binary tests of strong gravity.</p>
+        <div class="tags"><span class="tag">GRMHD</span><span class="tag">Accretion</span><span class="tag">AthenaK</span></div>
+      </a>
 
-      <article class="card">
-        <div><h3>Compton polarimetry in a segmented detector</h3>
-        <p class="meta">Prof. Varun Bhalerao &middot; Aug &ndash; Dec 2024</p></div>
-        <p>Modernised legacy IDL pipelines for Geant4 simulations of CZTI into Python, implementing Compton double-event analysis, and wrote a simplified Compton-scattering simulator with rejection sampling and vector rotations.</p>
-        <div class="tags"><span class="tag">Geant4</span><span class="tag">Polarimetry</span></div>
-      </article>
-
-      <article class="card">
-        <div><h3>Lunar chemical abundances from X-ray fluorescence</h3>
+      <a class="card" href="project.html#lunar-xrf-abundances">
+        <div><h3>Mapping Lunar Chemical Abundances using X-ray Fluorescence</h3>
         <p class="meta">Inter-IIT Tech Meet, first place &middot; Oct 2024 &ndash; Apr 2025</p></div>
-        <p>Developed a novel algorithm on Chandrayaan-2 CLASS data to detect solar flares from XRF line strengths and made the first high-resolution map of XRF line ratios, identifying compositional groups.</p>
-        <div class="tags"><span class="tag">Chandrayaan-2</span><span class="tag">X-ray</span></div>
-      </article>
+        <p>Developed a novel algorithm on Chandrayaan-2 CLASS data to detect solar flares from elemental XRF lines, and created the first high-resolution map of XRF line ratios, identifying compositional groups. Placed first in the high-prep ISRO problem statement at the Inter-IIT Tech Meet.</p>
+        <div class="tags"><span class="tag">Chandrayaan-2</span><span class="tag">X-ray</span><span class="tag">XRF</span></div>
+      </a>
 
-      <article class="card">
-        <div><h3>Machine learning for intelligent reflective surfaces</h3>
+      <a class="card" href="project.html#ml-intelligent-reflective-surfaces">
+        <div><h3>Machine Learning for Intelligent Reflective Surfaces</h3>
         <p class="meta">Prof. Anshuman Kumar &middot; IIT Bombay &middot; Aug &ndash; Dec 2024</p></div>
-        <p>Implemented array-factor and Fourier far-field models and the Gerchberg&ndash;Saxton algorithm, then trained an autoencoder alternative with lower time complexity for real-time phase retrieval.</p>
+        <p>Implemented far-field models of radiating arrays and the Gerchberg&ndash;Saxton iterative algorithm for beamforming phase design, then trained a PyTorch autoencoder alternative with lower time complexity, viable for real-time inverse-design phase retrieval.</p>
         <div class="tags"><span class="tag">PyTorch</span><span class="tag">Inverse design</span></div>
-      </article>
+      </a>
 
-      <article class="card">
-        <div><h3>Deep learning for satellite elevation estimation</h3>
+      <a class="card" href="project.html#satellite-elevation-dl">
+        <div><h3>Deep Learning for Satellite Elevation Estimation</h3>
         <p class="meta">SatSure Analytics &middot; May &ndash; Aug 2026</p></div>
-        <p>Implemented RAFT-Stereo for elevation from stereo satellite pairs and used Meta's DINOv2 for single-image depth, benchmarking both against LiDAR ground truth and the Google Open Buildings dataset.</p>
+        <p>Implemented RAFT-Stereo to replace classical stereo-satellite pipelines for elevation estimation and used Meta's DINOv2 to extract depth from single satellite images, benchmarking both against the Google Open Buildings dataset and LiDAR ground truth.</p>
         <div class="tags"><span class="tag">Deep learning</span><span class="tag">Remote sensing</span></div>
-      </article>
+      </a>
+
 
     </div>
   </div>
@@ -123,9 +124,9 @@
       <div>
         <p class="sub" style="margin-top:0">Submitted</p>
         <ul class="plain">
-          <li>S. Mate et al. (incl. <b>Y. Rai</b>), <i>PolPy: A universal tool for X/gamma-ray polarimetry using common data format standards</i>. Astrophysical Journal.</li>
-          <li>U. Pathak et al. (incl. <b>Y. Rai</b>), <i>Can We Find the Emission Mechanism Behind the Extremely Bright GRB 230812B?</i> Astrophysical Journal.</li>
-          <li>R. Kumar, <b>Y. Rai</b> et al., <i>Lunar geochemistry from X-ray line flux ratios using CLASS on Chandrayaan 2</i>. Planetary Science Journal.</li>
+          <li>S. Mate et al. (incl. <b>Y. Rai</b>), <i>PolPy: A universal tool for X/gamma-ray polarimetry using common data format standards</i>. Astrophysical Journal. <span class="refs"><a class="pill" href="https://arxiv.org/abs/2608.27775" data-embed data-title="PolPy: A universal tool for X/gamma-ray polarimetry (arXiv:2608.27775)">Paper</a></span></li>
+          <li>U. Pathak et al. (incl. <b>Y. Rai</b>), <i>Can We Find the Emission Mechanism Behind the Extremely Bright GRB 230812B?</i> Astrophysical Journal. <span class="refs"><a class="pill" href="https://arxiv.org/abs/2607.18437" data-embed data-title="Emission mechanism behind GRB 230812B (arXiv:2607.18437)">Paper</a></span></li>
+          <li>R. Kumar, <b>Y. Rai</b> et al., <i>Lunar geochemistry from X-ray line flux ratios using CLASS on Chandrayaan 2</i>. Planetary Science Journal. <span class="refs"><a class="pill" href="https://arxiv.org/abs/2508.15563" data-embed data-title="Lunar geochemistry from X-ray line flux ratios (arXiv:2508.15563)">Paper</a></span></li>
         </ul>
         <p class="sub">In preparation</p>
         <ul class="plain">
@@ -139,8 +140,10 @@
         <p class="sub" style="margin-top:0">Talks &amp; posters</p>
         <ul class="plain">
           <li>Invited talk, NRAO Socorro: <i>Can Selective Photon Trapping Explain Ammonia Hyperfine Anomalies?</i></li>
-          <li>Best poster, IITB symposium of physics: <i>PolPy: A universal tool for hard X-ray polarimetry</i>.</li>
+          <li>Best poster, IITB symposium of physics: <i>PolPy: A universal tool for hard X-ray polarimetry</i>. <span class="refs"><a class="pill" href="https://docs.google.com/presentation/d/1CMzVcYoYE8TVvCHKv9C_4FYjsjBXXOcnqccAkblDOzw/edit?usp=sharing" data-embed data-title="PolPy: A universal tool for hard X-ray polarimetry (poster)">Poster</a></span></li>
           <li>Poster, Lunar and Planetary Science Conference: <i>Lunar geochemistry from X-ray line flux ratios using CLASS on Chandrayaan 2</i>.</li>
+          <li>Presentation, Advanced Astrophysics: <i>Geometry and Observations of Thin Accretion Disks</i>. <span class="refs"><a class="pill" href="https://docs.google.com/presentation/d/1La5Wf0WqTfq2LN2JYodsQK4hwtytTy-yPuyOJDVzRT4/edit?usp=sharing" data-embed data-title="Geometry and Observations of Thin Accretion Disks (slides)">Slides</a></span></li>
+          <li>Talk on GRBs, Physics Journal Club, IIT Bombay (Oct 2023). <span class="refs"><a class="pill" href="https://docs.google.com/presentation/d/1KpFudyNcaRsxuaaF7t0p8BXJkf0tkk6lKl1r3N2eus4/edit?usp=sharing" data-embed data-title="Gamma-Ray Bursts, Physics Journal Club (slides)">Slides</a></span></li>
         </ul>
       </div>
     </div>
@@ -161,9 +164,9 @@
   <div class="wrap">
     <h2>Contact</h2>
     <ul class="contact-list">
-      <li>Email: <a href="mailto:yash-rai@iitb.ac.in">yash-rai@iitb.ac.in</a></li>
+      <li>Email: <a href="mailto:yash_rai@iitb.ac.in">yash_rai@iitb.ac.in</a></li>
       <li>GitHub: <a href="https://github.com/yash739">github.com/yash739</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/yashowardhanrai">yashowardhanrai</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/yashowardhan-rai-b2b551202/">yashowardhan-rai</a></li>
     </ul>
   </div>
 </section>
@@ -174,6 +177,7 @@
 </footer>
 
 <script src="assets/vendor/marked.min.js"></script>
+<script src="assets/viewer.js"></script>
 <script src="assets/work.js"></script>
 </body>
 </html>

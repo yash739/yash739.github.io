@@ -46,6 +46,23 @@ Images: put them in `work/assets/<slug>/` and reference them from the body as
 `work/assets/<slug>/fig.png` (paths resolve relative to `work.html`, not the entry).
 Keep images small (under ~500 KB each; export PNG/WebP, not full-resolution renders).
 
+## Research project pages
+
+Each tile in the home page's Research section opens `project.html#<slug>`, which is
+rendered from `research/<slug>.md` (same front-matter format; `title` and `summary`
+required, plus optional `period`, `guide`, `tags`, `links`). The body currently holds a
+placeholder template (Overview / Approach / Results / Outputs): to fill a page in, edit
+that one file. A new tile needs both a `research/<slug>.md` and a card in `index.html`
+(copy an existing `<a class="card" href="project.html#slug">` block). `research/_TEMPLATE.md`
+is the template for new pages.
+
+## Papers, posters and slides pop up in a window
+
+Any link with a `data-embed` attribute (`<a data-embed href="https://arxiv.org/abs/...">`)
+opens in a pop-up viewer with an "Open in new tab" fallback. Supported: arXiv, Google
+Slides, Google Drive files (must be shared "anyone with the link"). In markdown
+`links:` fields, supported URLs get this automatically.
+
 ## Content rules (this site is public)
 
 - Only state results that are true in this thread's outputs; cite numbers exactly.
@@ -60,6 +77,8 @@ Keep images small (under ~500 KB each; export PNG/WebP, not full-resolution rend
 
 - `index.html`: home page (CV content is static HTML; edit by hand when asked)
 - `work.html` + `assets/work.js`: work-log list and entry viewer (reads `work/index.json`)
+- `project.html` + `assets/project.js`: one research page per tile (reads `research/index.json`)
+- `research/*.md`: research project pages; `assets/viewer.js`: pop-up viewer
 - `work/*.md`: one entry per thread; `work/_TEMPLATE.md` is skipped by the indexer
 - `scripts/build_index.py`: generates `work/index.json`
 - `.github/workflows/pages.yml`: builds and deploys on every push to `main`
