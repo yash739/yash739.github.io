@@ -17,8 +17,3 @@ This is my MSc thesis, supervised by Prof. Varun Bhalerao: *Spectro-Polarimetric
 - Wrote **time-resolved spectral fitting scripts** and prompt-emission light curves for GRB 230812B, estimating the **photospheric radius** from the thermal (blackbody) component.
 - Modelled the **multi-band afterglow** of GRB 230812B with **MCMC sampling of afterglowpy models**, constraining jet and circumburst parameters from the full set of light curves.
 - Reported joint-polarization measurements of GRBs 161218B and 170202B, which were co-detected by CZTI and POLAR.
-
-## Outputs
-
-- Paper: *Can We Find the Emission Mechanism Behind the Extremely Bright GRB 230812B?* (Pathak et al., submitted to the Astrophysical Journal).
-- In preparation: *Detection of Inverse Compton Emission From GRB260226A Using AstroSat-CZTI Polarimetry* (Rai et al.), and a joint CZTI and POLAR polarization analysis (Pathak et al.).

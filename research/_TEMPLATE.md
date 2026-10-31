@@ -18,7 +18,3 @@ links: Code | https://github.com/yash739/example
 ## Results
 
 *Coming soon: key findings, figures and numbers.*
-
-## Outputs
-
-*Coming soon: papers, code, talks and posters.*

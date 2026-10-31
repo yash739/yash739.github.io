@@ -16,7 +16,3 @@ A summer data-science internship at SatSure Analytics on estimating depth and el
 - Used Meta's **DINOv2** transformer model to extract depth from **single satellite images**.
 - **Benchmarked** performance for construction-monitoring tasks against the open-source Google Open Buildings dataset.
 - Built a **comparison suite** to compare the deep-learning approaches against ground-truth **LiDAR** data.
-
-## Outputs
-
-- Internal work for SatSure Analytics, so there are no public links.

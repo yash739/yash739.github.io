@@ -16,9 +16,3 @@ When solar flares hit the Moon, the surface emits X-ray fluorescence (XRF) lines
 - Studied X-ray fluorescence and elemental detection methods for solar flares incident on the Moon.
 - Developed and implemented a **novel algorithm** that detects solar flares from the strengths of elemental XRF lines and the quality of their Gaussian fits.
 - Created the **first high-resolution map of XRF line ratios** using GeoTIFF files, identifying **compositional groups**.
-
-## Outputs
-
-- Paper: *Lunar geochemistry from X-ray line flux ratios using CLASS on Chandrayaan 2* (R. Kumar, Rai et al., submitted to the Planetary Science Journal).
-- Poster accepted at the Lunar and Planetary Science Conference.
-- Code and poster are linked above.

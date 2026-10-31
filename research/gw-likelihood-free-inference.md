@@ -16,8 +16,3 @@ Estimating the parameters of a gravitational-wave source normally relies on eval
 - Used the **AMPLFI** package to perform **likelihood-free inference** on gravitational waves from neutron star mergers.
 - Modified the **binary-black-hole models from IMRPhenom** to account for the **neutron star equation of state**.
 - Optimised the training hyper-parameters so the final model performs robustly on real-world data.
-
-## Outputs
-
-- AMPLFI is open source (see the links above).
-- No paper yet; this page will be updated if that changes.

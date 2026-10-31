@@ -21,7 +21,3 @@ Matter falling onto a black hole or neutron star forms an accretion disk, and ho
 ## Related coursework
 
 *Geometry and Observations of Thin Accretion Disks* (Advanced Astrophysics, Jan to Apr 2025, also with Prof. Kashyap). I simulated angular momentum transport with 1-D non-linear diffusion equations for different viscosity profiles, used spectral features and accretion rates to distinguish neutron stars from black holes, and analysed quasi-periodic oscillations against the relativistic predictions for the ISCO, periastron and Lense-Thirring frequencies. The slides are linked above.
-
-## Outputs
-
-- Course presentation (linked above). No paper yet.

@@ -9,7 +9,7 @@ separate "work log": work from a thread belongs on the relevant **research proje
 1. `git pull --rebase` in this repo.
 2. Find the project the work belongs to in `research/*.md` (one file per Research tile on the
    home page). Edit **only that file's body** (below the front matter), adding to the existing
-   sections (Overview / What I did / Highlights / Outputs), or add a new `##` section.
+   sections (Overview / What I did / Highlights), or add a new `##` section.
 3. If the work does not fit any existing project, create `research/<slug>.md` from
    `research/_TEMPLATE.md` **and** add a tile to `index.html` (copy an existing
    `<a class="card" href="project.html#slug">` block). Ask Yash first.

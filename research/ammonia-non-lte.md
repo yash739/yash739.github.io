@@ -17,9 +17,3 @@ In some cold protostellar cores the relative intensities of the ammonia (NH&#832
 - Used the latest NH&#8323;&ndash;H&#8322; collisional rates from the LAMDA database to show, in non-LTE simulations, that **selective photon trapping** produces the anomaly.
 - Built a **&chi;&sup2;-based retrieval** that infers cloud density, NH&#8323; abundance and Jeans radius purely from line ratios, and verified the formalism against Effelsberg 100 m telescope data of anomalous ammonia sources.
 - Scaled the retrieval to **~2000 real sources** from the Green Bank Ammonia Survey (Orion A) and Parkes data, enabling a population-level study of anomalous cores.
-
-## Outputs
-
-- Invited talk at NRAO Socorro: *Can Selective Photon Trapping Explain Ammonia Hyperfine Anomalies?*
-- In preparation: *Non-Equilibrium Radiative Transfer Simulations to Probe the Ammonia Hyperfine Intensity Anomaly* (Rai et al.).
-- Code is on GitHub (see the links above).
