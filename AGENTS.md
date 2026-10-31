@@ -44,6 +44,12 @@ Images: put them in `research/assets/<slug>/` and reference them from the body a
 `research/assets/<slug>/fig.png` (paths resolve relative to `project.html`, not the page).
 Keep images small (under ~500 KB each; PNG/WebP, not full-resolution renders).
 
+## Voice for project pages
+
+Write in natural first person, in short paragraphs: how you would explain the work to a curious
+colleague. Avoid CV style (no bullet lists of verb fragments, no bolded keywords, no stacked
+acronyms). Say what the question was, what was done, and what came out of it.
+
 ## Content rules (this site is public)
 
 - Only state results that are true in this thread's outputs; cite numbers exactly.
