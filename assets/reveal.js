@@ -6,7 +6,7 @@
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduce || !("IntersectionObserver" in window)) { root.classList.remove("js"); return; }
 
-  var LIST = "#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *, .contact-list li";
+  var LIST = "#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *";
   var els = document.querySelectorAll(LIST);
 
   var io = new IntersectionObserver(function (entries) {

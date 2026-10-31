@@ -104,8 +104,7 @@ ul.plain .when { float: right; margin-left: 1rem; color: var(--muted); font-size
 
 .empty { color: var(--muted); font-style: italic; }
 
-/* contact */
-.contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.4rem; }
+/* footer (contact links) */
 footer { padding: 2rem 0 3rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.88rem; }
 
 /* project pages */
@@ -165,7 +164,12 @@ section:nth-of-type(even) .btn:hover { border-color: #f6b26b; color: #f6b26b; }
 section:nth-of-type(even) .btn.primary { background: #f6b26b; color: #0b1426; border-color: #f6b26b; }
 section:nth-of-type(even) .btn.primary:hover { background: #fff; border-color: #fff; color: #0b1426; }
 section:nth-of-type(even) .cv-thumb { border-color: var(--line); box-shadow: 0 12px 36px rgba(0,0,0,.45); }
-footer { background: #0b1426; border-top: 0; color: #9fb0c9; }
+footer { background: #0b1426; border-top: 1px solid #1e2f55; color: #9fb0c9; padding: 1.6rem 0 1.8rem; }
+.footer-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.7rem 2rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.35rem 1.5rem; }
+footer a { color: #8fc3ee; text-decoration: none; }
+footer a:hover { color: #f6b26b; text-decoration: underline; text-underline-offset: 0.2em; }
+.footer-copy { margin: 0; font-size: 0.85rem; }
 
 /* hero portrait: two photos that crossfade, in a warm-glow frame */
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 18rem); gap: 3rem; align-items: center; }
@@ -220,8 +224,8 @@ footer { background: #0b1426; border-top: 0; color: #9fb0c9; }
 .hero { position: relative; z-index: 1; }
 
 /* scroll reveal: .js is set by a tiny inline script, .in by assets/reveal.js */
-.js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *, .contact-list li):not(.in) { opacity: 0; }
-.js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *, .contact-list li).in {
+.js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *):not(.in) { opacity: 0; }
+.js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *).in {
   animation: rise 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; animation-delay: var(--d, 0s);
 }
 section > .wrap > h2::after { content: ""; display: block; width: 2.75rem; height: 3px; margin-top: 0.55rem; border-radius: 2px; background: var(--accent); }
@@ -231,5 +235,5 @@ section > .wrap > h2::after { content: ""; display: block; width: 2.75rem; heigh
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *, .contact-list li):not(.in) { opacity: 1; }
+  .js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *):not(.in) { opacity: 1; }
 }
