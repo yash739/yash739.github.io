@@ -65,7 +65,8 @@ both in `index.html` and for `links:` entries in markdown pages.
 ## Layout
 
 - `index.html`: home page (CV content is static HTML; edit by hand when asked)
-- `project.html` + `assets/project.js`: one page per research tile (reads `research/index.json`)
+- `assets/panel.js` + `assets/panel.css`: on desktop, clicking a Research tile opens that project in a side panel (tiles glide into a column; reads `research/index.json`; deep link `#research/<slug>`)
+- `project.html` + `assets/project.js`: the same project as a full page (phones, no-JS, and the panel's "Open as a full page" link)
 - `research/*.md`: research project pages; `research/_TEMPLATE.md` is skipped by the indexer
 - `assets/img/` + `assets/swap.js`: the two hero photos (crossfade; captions live in `data-caption` attributes in `index.html`)
 - `assets/reveal.js`: scroll-in animations; `assets/cv/`: the CV PDF and its thumbnail
