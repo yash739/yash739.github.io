@@ -6,20 +6,17 @@ summary: Implemented RAFT-Stereo to replace classical stereo-satellite pipelines
 tags: [Deep learning, Remote sensing]
 ---
 
-*This page is being written. The sections below show what it will cover.*
-
 ## Overview
 
-*Coming soon: the scientific question and why it matters.*
+A summer data-science internship at SatSure Analytics on estimating depth and elevation from satellite imagery with deep learning, aimed at construction-monitoring tasks.
 
-## Approach
+## What I did
 
-*Coming soon: methods, data and tools used.*
-
-## Results
-
-*Coming soon: key findings, figures and numbers.*
+- Implemented the neural-network-based **RAFT-Stereo** to replace classical stereo-satellite image pipelines for **elevation estimation** from stereo satellite pairs.
+- Used Meta's **DINOv2** transformer model to extract depth from **single satellite images**.
+- **Benchmarked** performance for construction-monitoring tasks against the open-source Google Open Buildings dataset.
+- Built a **comparison suite** to compare the deep-learning approaches against ground-truth **LiDAR** data.
 
 ## Outputs
 
-*Coming soon: papers, code, talks and posters.*
+- Internal work for SatSure Analytics, so there are no public links.

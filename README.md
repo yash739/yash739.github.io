@@ -3,16 +3,16 @@
 Portfolio of Yashowardhan Rai: <https://yash739.github.io>
 
 A plain static site (HTML/CSS/JS) deployed by GitHub Actions. The CV content lives in
-`index.html`. The **work log** is a folder of markdown files, one per piece of work, so
-anyone (or any Claude thread) can add a section by adding a single file.
+`index.html`. Each Research tile opens a project page that is a markdown file in `research/`,
+so a project (or any Claude thread) can add its write-up by editing one file.
 
-## Add a work-log entry
+## Edit a project page
 
 ```bash
-cp work/_TEMPLATE.md work/2026-10-08-my-topic.md   # edit it
-python3 scripts/build_index.py                      # validates + generates work/index.json
-python3 -m http.server 8000                         # preview at http://localhost:8000/work.html
-git add work && git commit -m "Work log: my topic" && git push
+# edit research/<project>.md, then:
+python3 scripts/build_index.py                 # validates + generates research/index.json
+python3 -m http.server 8000                    # preview at http://localhost:8000/project.html#<project>
+git add research && git commit -m "Project page: <project>" && git push
 ```
 
 Full conventions, including what not to publish, are in [AGENTS.md](AGENTS.md).

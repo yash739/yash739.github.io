@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
-"""Index markdown pages into JSON for the site (stdlib only).
+"""Index the research project pages into research/index.json (stdlib only).
 
-    work/*.md      -> work/index.json       (dated work-log entries)
     research/*.md  -> research/index.json   (one page per Research tile)
 
 Each file is markdown with a small front-matter block:
 
     ---
     title: ...
-    date: YYYY-MM-DD      # work entries (required there)
     summary: one sentence
     tags: [a, b]          # optional
     status: ongoing|done  # optional
@@ -107,7 +105,6 @@ def build(folder, required, dated):
 
 
 def main():
-    build("work", ("title", "date", "summary"), dated=True)
     build("research", ("title", "summary"), dated=False)
     return 0
 

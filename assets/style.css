@@ -108,10 +108,7 @@ ul.plain .when { float: right; margin-left: 1rem; color: var(--muted); font-size
 .contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.4rem; }
 footer { padding: 2rem 0 3rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.88rem; }
 
-/* work log page */
-.page-head { padding: 3rem 0 1rem; }
-.page-head h1 { font: 600 2.2rem var(--serif); margin: 0 0 0.5rem; }
-.filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1rem 0 1.5rem; }
+/* project pages */
 .entry h1 { font: 600 clamp(1.8rem, 5vw, 2.4rem)/1.15 var(--serif); margin: 0.5rem 0 0.75rem; }
 .entry .back { font-size: 0.9rem; }
 .entry .links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
@@ -156,7 +153,7 @@ footer { padding: 2rem 0 3rem; border-top: 1px solid var(--line); color: var(--m
 .hero .btn.primary { background: #f6b26b; color: #0b1426; border-color: #f6b26b; }
 .hero .btn.primary:hover { background: #fff; border-color: #fff; color: #0b1426; }
 
-/* alternating light and navy bands (about, publications, work log stay light) */
+/* alternating light and navy bands (about and publications stay light) */
 section { border-top: 0; }
 section:nth-of-type(even) {
   --bg: #0e1a33; --surface: #16264a; --ink: #eef2f9; --muted: #a9b6cc; --line: #27395f;
@@ -223,22 +220,16 @@ footer { background: #0b1426; border-top: 0; color: #9fb0c9; }
 .hero { position: relative; z-index: 1; }
 
 /* scroll reveal: .js is set by a tiny inline script, .in by assets/reveal.js */
-.js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *, .contact-list li, #work-log .wrap > p):not(.in) { opacity: 0; }
-.js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *, .contact-list li, #work-log .wrap > p).in {
+.js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *, .contact-list li):not(.in) { opacity: 0; }
+.js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *, .contact-list li).in {
   animation: rise 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; animation-delay: var(--d, 0s);
 }
 section > .wrap > h2::after { content: ""; display: block; width: 2.75rem; height: 3px; margin-top: 0.55rem; border-radius: 2px; background: var(--accent); }
 .js section > .wrap > h2.in::after { animation: grow 0.8s 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
 
-/* work-log cards are inserted by script: ease them in */
-#latest-work .card, #all-work .card { animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
-#latest-work .card:nth-child(2), #all-work .card:nth-child(2) { animation-delay: 0.07s; }
-#latest-work .card:nth-child(3), #all-work .card:nth-child(3) { animation-delay: 0.14s; }
-#all-work .card:nth-child(4) { animation-delay: 0.21s; }
-#all-work .card:nth-child(5) { animation-delay: 0.28s; }
-#project, .page-head { animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+#project { animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *, .contact-list li, #work-log .wrap > p):not(.in) { opacity: 1; }
+  .js :where(#about .wrap > :not(h2), section > .wrap > h2, #research .card, .two > div, .cv > *, .contact-list li):not(.in) { opacity: 1; }
 }

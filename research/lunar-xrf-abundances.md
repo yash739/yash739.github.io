@@ -7,20 +7,18 @@ tags: [Chandrayaan-2, X-ray, XRF]
 links: Lunar XRF paper | https://arxiv.org/abs/2508.15563, Poster | https://github.com/ravioli1369/selenomapper/blob/main/posters_and_conferences/ISRO%20Selenomapper%20Symphy%202025.pdf, Code | https://github.com/ravioli1369/selenomapper
 ---
 
-*This page is being written. The sections below show what it will cover.*
-
 ## Overview
 
-*Coming soon: the scientific question and why it matters.*
+When solar flares hit the Moon, the surface emits X-ray fluorescence (XRF) lines whose strengths depend on the elements present. This project used data from the Large Area Soft X-ray Spectrometer (CLASS) on Chandrayaan-2 to map lunar composition. It placed **first in the high-prep ISRO problem statement at the Inter-IIT Tech Meet**.
 
-## Approach
+## What I did
 
-*Coming soon: methods, data and tools used.*
-
-## Results
-
-*Coming soon: key findings, figures and numbers.*
+- Studied X-ray fluorescence and elemental detection methods for solar flares incident on the Moon.
+- Developed and implemented a **novel algorithm** that detects solar flares from the strengths of elemental XRF lines and the quality of their Gaussian fits.
+- Created the **first high-resolution map of XRF line ratios** using GeoTIFF files, identifying **compositional groups**.
 
 ## Outputs
 
-*Coming soon: papers, code, talks and posters.*
+- Paper: *Lunar geochemistry from X-ray line flux ratios using CLASS on Chandrayaan 2* (R. Kumar, Rai et al., submitted to the Planetary Science Journal).
+- Poster accepted at the Lunar and Planetary Science Conference.
+- Code and poster are linked above.

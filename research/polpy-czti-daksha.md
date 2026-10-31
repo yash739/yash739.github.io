@@ -7,20 +7,26 @@ tags: [Polarimetry, PolPy, AstroSat-CZTI, Daksha]
 links: PolPy code | https://github.com/threeML/polpy, PolPy paper | https://arxiv.org/abs/2608.27775
 ---
 
-*This page is being written. The sections below show what it will cover.*
-
 ## Overview
 
-*Coming soon: the scientific question and why it matters.*
+Gamma-ray burst polarization is measured through Compton scattering: polarized photons scatter preferentially perpendicular to their polarization direction, which imprints a modulation on the detector. Turning that into a physical measurement needs a detector response, a statistical framework and a pipeline that scales to many bursts. This project built those pieces for AstroSat-CZTI, the POLAR mission and the upcoming Daksha polarimeter, under Prof. Varun Bhalerao.
 
-## Approach
+## What I did
 
-*Coming soon: methods, data and tools used.*
+- Co-developed **PolPy**, a plugin for the Multi-Mission Maximum Likelihood Framework (3ML) that standardises Compton polarimetry routines and enables **joint-polarization measurements** with current and future polarimeters.
+- Built an **injection-recovery pipeline** for the next-generation GRB polarimeter **Daksha**, coordinating file formats and coordinate conventions with the **POLAR** mission to synthesise GRB data for testing PolPy.
+- Converted the **AstroSat-CZTI polarization pipeline** from legacy IDL to Python and added **pixel charge-sharing effects** to the response.
+- Implemented CI/CD routines for PolPy, accelerated the response-interpolation routines, and profiled, parallelised and optimised the Daksha and CZTI pipelines.
 
-## Results
+## Highlights
 
-*Coming soon: key findings, figures and numbers.*
+- The rewritten CZTI pipeline made CZTI's **11-year catalogue of 40+ GRBs** practical to analyse.
+- Optimisation and parallelisation made analysis at catalogue scale feasible rather than burst-by-burst.
+- PolPy is now part of 3ML.
 
 ## Outputs
 
-*Coming soon: papers, code, talks and posters.*
+- Paper: *PolPy: A universal tool for X/gamma-ray polarimetry using common data format standards* (Mate et al., submitted to the Astrophysical Journal).
+- Code: PolPy is open source (see the links above).
+- Best poster for PolPy at IIT Bombay's symposium of physics.
+- In preparation: the CZTI 11-year polarization catalogue (Pathak, Rai et al.) and a joint CZTI and POLAR polarization analysis (Pathak et al.).

@@ -7,20 +7,17 @@ tags: [Gravitational waves, Machine learning]
 links: AMPLFI | https://amplfi.readthedocs.io/en/latest/
 ---
 
-*This page is being written. The sections below show what it will cover.*
-
 ## Overview
 
-*Coming soon: the scientific question and why it matters.*
+Estimating the parameters of a gravitational-wave source normally relies on evaluating a likelihood many times, which is expensive. Likelihood-free approaches instead train a neural network to produce the posterior directly. This project, with Prof. Michael Coughlin at the University of Minnesota, applied that idea to neutron star mergers.
 
-## Approach
+## What I did
 
-*Coming soon: methods, data and tools used.*
-
-## Results
-
-*Coming soon: key findings, figures and numbers.*
+- Used the **AMPLFI** package to perform **likelihood-free inference** on gravitational waves from neutron star mergers.
+- Modified the **binary-black-hole models from IMRPhenom** to account for the **neutron star equation of state**.
+- Optimised the training hyper-parameters so the final model performs robustly on real-world data.
 
 ## Outputs
 
-*Coming soon: papers, code, talks and posters.*
+- AMPLFI is open source (see the links above).
+- No paper yet; this page will be updated if that changes.

@@ -7,20 +7,16 @@ tags: [PyTorch, Inverse design]
 links: R&D project report | https://drive.google.com/file/d/1RfsM74MtPZwdDktPdod8p6Le2FGFcNOc/view?usp=sharing
 ---
 
-*This page is being written. The sections below show what it will cover.*
-
 ## Overview
 
-*Coming soon: the scientific question and why it matters.*
+An intelligent reflective surface is an array of elements whose relative phases can be tuned to shape a beam. Choosing the phases that give a desired beam is an inverse-design problem. This R&D project, with Prof. Anshuman Kumar at IIT Bombay, compared a classical iterative method with a neural-network alternative.
 
-## Approach
+## What I did
 
-*Coming soon: methods, data and tools used.*
-
-## Results
-
-*Coming soon: key findings, figures and numbers.*
+- Wrote programs to compute the **far-field intensity patterns** of arrays of radiating elements, both by direct summation of array factors and with Fourier-transform approximations.
+- Implemented the **Gerchberg&ndash;Saxton iterative algorithm** to find the relative phase distribution that produces a given beamed intensity profile.
+- Trained a **PyTorch autoencoder** as an alternative to Gerchberg&ndash;Saxton, with reduced time complexity, making a **real-time solution** of the inverse-design phase-retrieval problem viable.
 
 ## Outputs
 
-*Coming soon: papers, code, talks and posters.*
+- R&D project report (linked above).
