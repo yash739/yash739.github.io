@@ -9,7 +9,8 @@
   var wide = window.matchMedia("(min-width: 52.01rem)");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var EASE = "cubic-bezier(0.2, 0.8, 0.2, 1)";
-  var data = null, panel = null, content = null, current = null, busy = false;
+  var data = null, panel = null, shell = null, scroller = null, bar = null, content = null;
+  var current = null, busy = false, ticking = false;
 
   function slugOf(a) { return (a.getAttribute("href").split("#")[1] || ""); }
   function el(tag, cls, text) {
@@ -33,15 +34,21 @@
     });
   }
 
+  // reading progress bar and top/bottom edge fades follow the scroller
+  function update() {
+    ticking = false;
+    if (!scroller) return;
+    var max = scroller.scrollHeight - scroller.clientHeight, t = scroller.scrollTop;
+    bar.style.setProperty("--p", max > 0 ? Math.min(1, t / max) : 0);
+    shell.classList.toggle("can-up", t > 6);
+    shell.classList.toggle("can-down", max - t > 6);
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+
   function fill(item) {
     content.replaceChildren();
-    var close = el("button", "rv-close", "×");
-    close.type = "button";
-    close.setAttribute("aria-label", "Close project");
-    close.addEventListener("click", function () { closePanel(); });
     var title = el("h3", "rv-title", item.title);
     title.tabIndex = -1;
-    content.appendChild(close);
     content.appendChild(title);
     var meta = [item.guide, item.period].filter(Boolean).join(" · ");
     if (meta) content.appendChild(el("p", "rv-meta", meta));
@@ -66,6 +73,7 @@
     var full = el("a", "rv-full", "Open as a full page ↗");
     full.href = "project.html#" + item.slug;
     content.appendChild(full);
+    update();
     return title;
   }
 
@@ -83,16 +91,34 @@
 
   function find(slug) { return data && data.filter(function (d) { return d.slug === slug; })[0]; }
 
+  function buildPanel() {
+    panel = el("aside", "rv-panel");
+    panel.setAttribute("aria-label", "Project details");
+    shell = el("div", "rv-shell");
+    bar = el("div", "rv-progress");
+    scroller = el("div", "rv-scroll");
+    scroller.tabIndex = 0;
+    scroller.setAttribute("aria-label", "Project details, scrollable");
+    content = el("div", "rv-content");
+    scroller.appendChild(content);
+    var close = el("button", "rv-close", "×");
+    close.type = "button";
+    close.setAttribute("aria-label", "Close project");
+    close.addEventListener("click", function () { closePanel(); });
+    shell.appendChild(bar);
+    shell.appendChild(scroller);
+    shell.appendChild(el("div", "rv-fade top"));
+    shell.appendChild(el("div", "rv-fade bot"));
+    shell.appendChild(close);
+    panel.appendChild(shell);
+    scroller.addEventListener("scroll", onScroll, { passive: true });
+  }
+
   function openPanel(slug, instant) {
     var item = find(slug);
     if (!item || busy) return;
     if (!panel) {
-      panel = el("aside", "rv-panel");
-      panel.setAttribute("aria-label", "Project details");
-      var inner = el("div", "rv-inner");
-      content = el("div", "rv-content");
-      inner.appendChild(content);
-      panel.appendChild(inner);
+      buildPanel();
       var title;
       flip(function () {
         grid.classList.add("is-open");
@@ -101,7 +127,7 @@
         mark(slug);
       }, instant);
       if (!instant && !reduce) {
-        inner.animate(
+        shell.animate(
           [{ clipPath: "inset(0 100% 0 0 round 16px)", opacity: 0, transform: "translateX(-18px)" },
            { clipPath: "inset(0 0 0 0 round 16px)", opacity: 1, transform: "none" }],
           { duration: 700, easing: EASE, delay: 120, fill: "backwards" });
@@ -110,10 +136,10 @@
       if (!instant) title.focus({ preventScroll: true });
     } else if (slug !== current) {
       busy = true;
-      var inner2 = panel.firstElementChild;
       var done = function () {
         var title2 = fill(item);
-        inner2.scrollTop = 0;
+        scroller.scrollTo({ top: 0, behavior: "instant" });
+        update();
         mark(slug);
         stagger();
         busy = false;
@@ -135,20 +161,20 @@
 
   function closePanel(instant) {
     if (!panel || busy) return;
-    var p = panel, back = cards.filter(function (c) { return slugOf(c) === current; })[0];
+    var p = panel, s = shell, back = cards.filter(function (c) { return slugOf(c) === current; })[0];
     var finish = function () {
       flip(function () {
         p.remove();
         grid.classList.remove("is-open");
         mark(null);
       }, instant);
-      panel = null; content = null; current = null; busy = false;
+      panel = shell = scroller = bar = content = null; current = null; busy = false;
       history.replaceState(null, "", location.pathname + location.search + "#research");
       if (back && !instant) back.focus({ preventScroll: true });
     };
     if (instant || reduce) { finish(); return; }
     busy = true;
-    p.firstElementChild.animate(
+    s.animate(
       [{ clipPath: "inset(0 0 0 0 round 16px)", opacity: 1 }, { clipPath: "inset(0 100% 0 0 round 16px)", opacity: 0 }],
       { duration: 320, easing: "ease-in", fill: "forwards" });
     setTimeout(finish, 330);
@@ -163,6 +189,7 @@
     if (slug === current) closePanel(); else openPanel(slug);
   });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") closePanel(); });
+  window.addEventListener("resize", function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } });
   wide.addEventListener("change", function () { if (!wide.matches) closePanel(true); });
 
   fetch("research/index.json", { cache: "no-cache" })
